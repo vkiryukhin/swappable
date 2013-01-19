@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+	<meta charset="UTF-8" /> 
+	<title>Swappable jQuery plugn</title> 
+	
+	<link type="text/css" href="jquery/jquery.ui.all.css" rel="stylesheet" /> 
+	<!--link type="text/css" href="jquery/jquery.ui.theme.css" rel="stylesheet" /--> 
+	<link type="text/css" href="jquery/demos.css" rel="stylesheet" /> 
+	<link type="text/css" href="swappable.css" rel="stylesheet" /> 
+	<script type="text/javascript" src="jquery/jquery-1.7.2.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.ui.core.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.ui.widget.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.ui.mouse.js"></script> 
+	<script type="text/javascript" src="jquery/jquery.ui.sortable.js"></script> 
+	<script type="text/javascript" src="jquery.ui.swappable.js"></script> 
+	
+	<style type="text/css"> 
+		p {margin:10px;}
+		#swappable { list-style-type: none; margin: 0; padding: 0;}
+		#swappable li { margin: 0 3px 3px 3px; padding: 3px; padding-left: 20px; font-size: 1.2em; height: 25px; }
+		.ui-state-highlight { height: 30px;}
+		.demo {width:360px; height:250px; }
+	</style> 
+	
+</head> 
+<body> 
+
+<h1>Swappable - jQuery Plugin </h1>
+<div style="text-align:center;text-size:100%"> 
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="swappable_home.html">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="swappable_list.html">List</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="swappable_grid.html">Grid</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="swappable_row.html">Row</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="http://code.google.com/p/jquery-swapable/downloads/list" target="_blank">
+Download</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="http://vadimkir.blogspot.com/2010/08/swappable-jquery-plugin.html" target="_blank">
+Blog</a>
+
+</div>
+<hr/>
+<h2>Introduction</h2>
+
+<p>
+Swappable is a jQuery plugin enables a group of DOM elements to be swappable. 
+Click on and drag an element to a new spot within the list; 
+drag element and drop one will swap and the other items will not affected. 
+By default, swappable items share sortable properties.
+</p>
+
+<p><b>DETAILS</b></p>
+<p>
+Similar to "Sortable", but only two elements of the selected group are affected: 
+dragged and dropped which are swapped. All other elements stay at their current 
+positions. This plugin is built based on existing "Sortable" jQuery plugin and 
+inherits all sortable options except "cursorAt" and "items" ones (explained below) 
+</p>
+
+<p><b>Depends:</b></p>
+<ol>
+<li>jquery.ui.core.js</li>
+<li>jquery.ui.mouse.js</li>
+<li>jquery.ui.widget.js</li>
+<li>jquery.ui.sortable.js</li>
+</ol>
+
+To add the feature to a group of elements:<br/>
+Minimal configuration:<br/><br/>
+<code>
+		$("#swappable").swappable({<br/>
+&nbsp;&nbsp;			items: '.itemClass',<br/>
+&nbsp;&nbsp;			cursorAt: {top:-10}  <br/>
+		});<br/>
+</code>		
+		<br/>
+<br/>
+
+<b>Option's specific:</b>
+<br/><br/>
+<ul>
+<li>Always set option "<code>cursorAt: {top: -nn} </code>" as a <b>negative</b> Integer.</li><br/>
+<li>Always set option "<code>items</code>" with items' <b>class name</b>, not element or filter.</li>
+</ul>
+
+ <b>Example:</b><br/><br/>
+ <code>			
+ 			&lt;ul id="foo"&gt;<br/>
+ 			&nbsp;&nbsp;	&lt;li class="bar"&gt;&lt;li&gt;<br/>
+ 			&nbsp;&nbsp;	&lt;li class="bar"&gt;&lt;li&gt;<br/>
+ 			&nbsp;&nbsp;	&lt;li class="bar"&gt;&lt;li&gt;<br/>
+ 			&lt;/ul&gt;<br/>
+</code>
+<br/>
+<code> 			
+ 			$("#foo").swappable({<br/>
+ 			&nbsp;&nbsp;	items:'.bar', //<span style="color:green;"> Mandatory option, class only.</span><br/>
+ 			&nbsp;&nbsp;	cursorAt: {top:-20}, // <span style="color:green;">MUST be set to negative. Default doesn't work!</span><br/>
+ 			});<br/>
+</code>
+<br/><br/>
+Add this statement (optional) to disable unwilling text selection<br/>
+<code>
+$("#swappable").disableSelection();
+</code> 
+ </b><br/><br/>
+<br clear="all"/>
+<hr/>
+
+<div style="text-align:center;color:#999999;font-size:70%;">
+&copy;2010 Vadim Kiryukhin</div>
+</b><br/><br/>
+
+</body> 
+</html> 
