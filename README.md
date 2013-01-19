@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  Swappable is a jQuery plugin enables a group of DOM elements to be swappable. Click on and drag an element to a new spot within the list; drag element and drop one will swap and the other items will not affected. By default, swappable items share sortable properties.
 
 DETAILS
@@ -42,3 +43,9 @@ $("#foo").swappable({
 
 Add this statement (optional) to disable unwilling text selection
 $("#swappable").disableSelection();
+=======
+swappable
+=========
+
+Swappable is a jQuery plugin enables a group of DOM elements to be swappable.
+>>>>>>> a25d91ea128f2467810aafab0397b2c956635a2a
